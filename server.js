@@ -15,7 +15,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 //creates a default layout pointing to the main.handlebars file
-app.engine("handlbars", exphbs({ defaultLayout: "main"})); 
+app.engine("handlebars", exphbs({ defaultLayout: "main"})); 
 //sets up handlebars
 app.set("view engine", "handlebars"); 
 
