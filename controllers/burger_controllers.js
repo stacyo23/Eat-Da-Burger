@@ -16,7 +16,7 @@ router.get("/", function(req, res) {
   });
 });
 
-router.post("/burgers", function(req, res) {
+router.post("api/burgers", function(req, res) {
   burger.insertOne([
     "burger_name"
   ], [
@@ -27,7 +27,7 @@ router.post("/burgers", function(req, res) {
   });
 });
 
-router.put("/burgers/:id", function(req, res) {
+router.put("api/burgers/:id", function(req, res) {
   var condition = "id = " + req.params.id;
 
   // console.log("condition", condition);
