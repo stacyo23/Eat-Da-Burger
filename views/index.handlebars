@@ -1,46 +1,44 @@
 <h1>Eat-Da-Burger</h1>
 
-<div class="container">
-    <div class="row">
-        <div class="col">
+<div class="burgers">
+    
             <h2>Available burgers</h2>
+
+         <ul>
             {{#each burgers}}
-            {{#unless this.devoured}}
-             <div class="available-burgers">
-                 <form id ="devour">
-                     {{this.burger_name}}
-                     <button method="PUT" type="submit" class="devour-it" data-id="{{id}}" data-newfood="{{devoured}}">Devour IT!</button>
-                 </form>
-             </div>
+            {{#unless devoured}}
+            {{>burgers/burgers devoured=false}}
             {{/unless}}
             {{/each}}
-        </div>
+        </ul>
+</div>
+
         <div class="col">
             <img src ="assets/img/burger.png">
         </div>
-        <div class="col">
+
+        <div class="devoured">
             <h2>Devoured burgers</h2>
+             <ul>
             {{#each burgers}}
-            {{#if this.devoured}}
-            <div class="devoured-burgers">
-                {{this.burger_name}}
-            </div>
-            {{/if}}
+            {{#unless devoured}}
+            {{>burgers/burgers devoured=true}}
+            {{/unless}}
             {{/each}}
+            </ul>
         </div>
+
+    <div class="create">
+        <h2>Add a burger</h2>
+        <form class="create-form">
+            <div class="form-group">
+            <label for="burger">Burger Name:</label>
+            <input type="text" id="burger" name="name">
+            </div>    
+            <button method="POST" type="submit">Add burger</button>
+        </form>
     </div>
-    <div class="row">
-        <div class="col">
-            <h2>Add a burger</h2>
-                <form class="create-form">
-                    <div class="form-group">
-                        <input type="text" id="ca" name="name">
-                            <button method="POST" type="submit">Add burger</button>
-                    </div>
-                </form>
-        </div>
-    </div>
-</div>
+
 
 
 
