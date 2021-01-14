@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 //sets express
 var express = require('express');
 //sets handlebars

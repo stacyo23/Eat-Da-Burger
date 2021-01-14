@@ -4,20 +4,19 @@
     <div class="row">
         <div class="col">
             <h2>Available burgers</h2>
-            
             {{#each burgers}}
             {{#unless this.devoured}}
              <div class="available-burgers">
-                 <form method="PUT" id ="devour">
+                 <form id ="devour">
                      {{this.burger_name}}
-                     <button type="submit">Devour IT!</button>
+                     <button method="PUT"type="submit" class="devour-it" data-id="{{id}}" datanewfood="{{devoured}}">Devour IT!</button>
                  </form>
              </div>
             {{/unless}}
             {{/each}}
         </div>
         <div class="col">
-            <img src ="assets/img/burger.png"
+            <img src ="assets/img/burger.png">
         </div>
         <div class="col">
             <h2>Devoured burgers</h2>
@@ -30,13 +29,18 @@
             {{/each}}
         </div>
     </div>
+    <div class="row">
+        <div class="col">
+            <h2>Add a burger</h2>
+                <form class="create-form">
+                    <div class="form-group">
+                        <input type="text" id="ca" name="name">
+                            <button method="POST" type="submit">Add burger</button>
+                    </div>
+                </form>
+        </div>
+    </div>
 </div>
 
 
-<h2>Add a burger</h2>
-<form class="create-form" method="POST">
-<div class="form-group">
-    <input type="text" id="ca" name="name">
-<button type="submit">Add burger</button>
-</div>
-</form>
+
