@@ -2,7 +2,7 @@
 
 <div class="burgers">
     
-            <h2>Available burgers</h2>
+            <h2>Available burgers:</h2>
 
          <ul>
             {{#each burgers}}
@@ -13,17 +13,17 @@
         </ul>
 </div>
 
-        <div class="col">
+        <div class="img">
             <img src ="assets/img/burger.png">
         </div>
 
         <div class="devoured">
-            <h2>Devoured burgers</h2>
+            <h2>Devoured burgers:</h2>
              <ul>
             {{#each burgers}}
-            {{#unless devoured}}
+            {{#if devoured}}
             {{>burgers/burgers devoured=true}}
-            {{/unless}}
+            {{/if}}
             {{/each}}
             </ul>
         </div>

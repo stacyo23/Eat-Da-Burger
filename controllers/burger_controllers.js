@@ -23,6 +23,7 @@ router.post("api/burgers", function(req, res) {
     req.body.burger_name,
   ], function() {
     //"refreshes" the page with the new burger
+    res.json({id: result.insertId})
     res.redirect("/");
   });
 });
@@ -33,8 +34,11 @@ router.put("api/burgers/:id", function(req, res) {
   // console.log("condition", condition);
 
   burger.updateOne({
-    devoured: true
+    devoured: req.body.devoured
   }, condition, function(result) {
+    if (result.changedRows ==0) {
+      return res.
+    }
     //"refreshes the page to show the burger has moved to the devoured side"
     res.redirect("/");
   });
