@@ -16,19 +16,21 @@ router.get("/", function(req, res) {
   });
 });
 
-router.post("api/burgers", function(req, res) {
+router.post("/api/burgers", function(req, res) {
+
+console.log(req.body);
   burger.insertOne([
-    "burger_name"
+    "burger_name", "devoured"
   ], [
-    req.body.burger_name,
-  ], function() {
+    req.body.name, false
+  ], function(result) {
     //"refreshes" the page with the new burger
     res.json({id: result.insertId})
-    res.redirect("/");
+    // res.redirect("/");
   });
 });
 
-router.put("api/burgers/:id", function(req, res) {
+router.put("/api/burgers/:id", function(req, res) {
   var condition = "id = " + req.params.id;
 
   // console.log("condition", condition);
@@ -37,10 +39,12 @@ router.put("api/burgers/:id", function(req, res) {
     devoured: req.body.devoured
   }, condition, function(result) {
     if (result.changedRows ==0) {
-      return res.
+      return res.status(404).end();
+    } else {
+      res.status(200).end();
     }
     //"refreshes the page to show the burger has moved to the devoured side"
-    res.redirect("/");
+    // res.redirect("/");
   });
 });
 
