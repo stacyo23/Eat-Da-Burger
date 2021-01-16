@@ -36,3 +36,14 @@ img {
     margin-top: 200px;
     margin-left: 550px;
 }
+
+#devour-button {
+    display: flex; 
+    justify-content: space-between;
+    margin-top: 5px;
+    margin-left: 10px;
+}
+
+.devour {
+    margin-left: 5px;;
+}
