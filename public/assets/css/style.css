@@ -1,7 +1,38 @@
 body {
     background-color: #ffdb58;
+    font-family: "Potta One", "Permanent Marker", "Acme";
+}
+
+h1 {
+    text-align: center;
+    font-size: 60px;
 }
 
 li {
     list-style-type: none;
+    font-size: 20px;
+}
+
+img {
+    width: 125px; 
+    height: auto;
+    padding-left: 170px;
+    margin-top: -25px;
+}
+
+.burgers {
+    margin-top: 50px; 
+    float: left;
+    margin-left: 25px;
+}
+
+.devoured {
+    float: right;
+    margin-right: 100px; 
+    margin-top: -60px; 
+}
+
+.create {
+    margin-top: 200px;
+    margin-left: 550px;
 }

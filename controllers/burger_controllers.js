@@ -32,9 +32,7 @@ console.log(req.body);
 
 router.put("/api/burgers/:id", function(req, res) {
   var condition = "id = " + req.params.id;
-
-  // console.log("condition", condition);
-
+  
   burger.updateOne({
     devoured: req.body.devoured
   }, condition, function(result) {
@@ -43,8 +41,6 @@ router.put("/api/burgers/:id", function(req, res) {
     } else {
       res.status(200).end();
     }
-    //"refreshes the page to show the burger has moved to the devoured side"
-    // res.redirect("/");
   });
 });
 
