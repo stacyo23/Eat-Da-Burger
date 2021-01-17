@@ -1,11 +1,13 @@
+//uses the express dependency
 var express = require("express");
 
+//sets up backend routes
 var router = express.Router();
 
 // Import the model to use its database functions.
 var burger = require("../models/burger.js");
 
-// Create all our routes and set up logic within those routes where required.
+// route to show all burgers on index page
 router.get("/", function(req, res) {
   burger.selectAll(function(data) {
     var hbsObject = {
@@ -15,6 +17,9 @@ router.get("/", function(req, res) {
     res.render("index", hbsObject);
   });
 });
+
+
+//route to create a new burger 
 
 router.post("/api/burgers", function(req, res) {
 
@@ -30,6 +35,7 @@ console.log(req.body);
   });
 });
 
+// route to update burgers at the selected id
 router.put("/api/burgers/:id", function(req, res) {
   var condition = "id = " + req.params.id;
   

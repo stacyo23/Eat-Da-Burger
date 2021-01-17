@@ -1,18 +1,22 @@
+/* sets background color and font for page */
 body {
     background-color: #ffdb58;
     font-family: "Potta One", "Permanent Marker", "Acme";
 }
 
+/* centers header text and increases title of page */
 h1 {
     text-align: center;
     font-size: 60px;
 }
 
+/* gets rid of bullet points and increases font size */
 li {
     list-style-type: none;
     font-size: 20px;
 }
 
+/* increases burger.png size and adjusts it to approx mid-page */
 img {
     width: 125px; 
     height: auto;
@@ -20,23 +24,27 @@ img {
     margin-top: -25px;
 }
 
+/* sets available burgers to the left of the page and adjusts the placement on the page*/
 .burgers {
     margin-top: 50px; 
     float: left;
     margin-left: 25px;
 }
 
+/* sets devoured burgers to the right of the page and adjusts placement on the page to "hopefully" be even with the available burgers list */
 .devoured {
     float: right;
     margin-right: 100px; 
     margin-top: -60px; 
 }
 
+/* sets the add a burger bit lower and to the middle of the page */
 .create {
     margin-top: 200px;
     margin-left: 550px;
 }
 
+/* styles the "devour it" buttons to be in line with each other */
 #devour-button {
     display: flex; 
     justify-content: space-between;
@@ -44,6 +52,7 @@ img {
     margin-left: 10px;
 }
 
+/* puts a bit of space between the "devour it" button and the list items in the available burgers */
 .devour {
-    margin-left: 5px;;
+    margin-left: 5px;
 }

@@ -29,8 +29,6 @@ function objToSql(ob) {
       if (typeof value === "string" && value.indexOf(" ") >= 0) {
         value = "'" + value + "'";
       }
-      // e.g. {name: 'Lana Del Grey'} => ["name='Lana Del Grey'"]
-      // e.g. {sleepy: true} => ["sleepy=true"]
       arr.push(key + "=" + value);
     }
   }
@@ -41,6 +39,7 @@ function objToSql(ob) {
 
 // Object for all our SQL statement functions.
 var orm = {
+  //function containing mysql query to get all burgers
   selectAll: function(tableInput, cb) {
     var queryString = "SELECT * FROM " + tableInput + ";";
     connection.query(queryString, function(err, result) {
@@ -50,7 +49,7 @@ var orm = {
       cb(result);
     });
   },
-
+//function containing mysql query to add a new burger
   insertOne: function(table, cols, vals, cb) {
     var queryString = "INSERT INTO " + table;
 
@@ -71,7 +70,7 @@ var orm = {
       cb(result);
     });
   },
-  // An example of objColVals would be {name: panther, sleepy: true}
+  //function containing mysql query to update the devoured value that has been chosen
   updateOne: function(table, objColVals, condition, cb) {
     var queryString = "UPDATE " + table;
 

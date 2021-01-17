@@ -3,7 +3,7 @@
 <div class="burgers">
     
             <h2>Available burgers:</h2>
-
+        {{!-- unordered list pulls each burger name unless already devoured from the burgers partial --}}
          <ul>
             {{#each burgers}}
             {{#unless devoured}}
@@ -12,13 +12,14 @@
             {{/each}}
         </ul>
 </div>
-
+        {{!-- image placed --}}
         <div class="img">
             <img src ="assets/img/burger.png">
         </div>
 
         <div class="devoured">
             <h2>Devoured burgers:</h2>
+            {{!-- unordered list to show each burger where devoured =true --}}
              <ul>
             {{#each burgers}}
             {{#if devoured}}
@@ -28,7 +29,7 @@
             </ul>
         </div>
        
-
+       {{!-- form to accept new burger name --}}
     <div class="create">
         <h2>Add a burger:</h2>
         <form class="create-form">
